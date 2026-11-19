@@ -30,3 +30,10 @@ Upload `index.html`, `styles.css`, `app.js` and `providers.js` to any static hos
 ## Adding another provider (e.g. Gemini)
 
 Add an entry to `providers.js` with `id`, `name`, `tagline`, `placeholder`, `buildUrl(q)`, `theme`, `steps` and `redirectNote`. It appears in the header automatically and is reachable via `?p=<id>`. The "(soon)" badge in `COMING_SOON` (`app.js`) disappears automatically once the provider exists.
+
+## SEO
+
+- Title, description, canonical URL, Open Graph/Twitter cards (`og-image.png`) and JSON-LD (`WebApplication` + `FAQPage`) live in `index.html`.
+- Shared `?q=` links are marked `noindex` so only the home page gets indexed.
+- `sitemap.xml` lists the canonical URL; `llms.txt` gives AI crawlers a plain-text summary.
+- Submit `https://daboostr.com/letmepromptthatforyou/sitemap.xml` in Google Search Console and Bing Webmaster Tools to speed up indexing.

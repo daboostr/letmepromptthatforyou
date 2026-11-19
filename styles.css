@@ -20,7 +20,7 @@ body {
 }
 main { flex: 1; display: flex; justify-content: center; padding: 2rem 1rem; }
 .view { width: 100%; max-width: 760px; display: flex; flex-direction: column; align-items: center; }
-.view[hidden] { display: none; }
+.view[hidden], html.play #generator { display: none; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
@@ -88,6 +88,14 @@ h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); text-align: center; margin: .25rem 0
   border: 1px solid #0003; background: var(--surface); color: var(--text);
 }
 .muted { color: var(--muted); }
+
+.info { width: 100%; margin-top: 3rem; }
+.info h2 { font-size: 1.2rem; margin: 0 0 .75rem; }
+.info ol { padding-left: 1.25rem; line-height: 1.6; color: var(--muted); }
+.info strong { color: var(--text); }
+.info details { background: var(--surface); border: 1px solid #0000000f; border-radius: 14px; padding: .75rem 1rem; margin-bottom: .5rem; }
+.info summary { cursor: pointer; font-weight: 600; }
+.info details p { color: var(--muted); margin: .5rem 0 0; }
 
 /* Player */
 .caption {

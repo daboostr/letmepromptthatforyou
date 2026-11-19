@@ -24,13 +24,12 @@
     root.setProperty("--muted", p.theme.muted);
     root.setProperty("--accent", p.theme.accent);
     root.setProperty("--gradient", p.theme.gradient);
-    $("providerName").textContent = p.name;
     $("genProvider").textContent = p.name;
     $("fakeTitle").textContent = p.name;
     $("fakePh").textContent = p.placeholder;
     $("tagline").textContent = p.tagline;
-    document.title = "Let me " + p.name + " that for you";
-    const home = "?p=" + p.id;
+    // Keep the default provider on the clean canonical URL.
+    const home = p.id === DEFAULT_PROVIDER ? "./" : "?p=" + p.id;
     $("brandLink").href = home;
     $("makeOwn").href = home;
   }
@@ -39,7 +38,7 @@
     const nav = $("providerNav");
     Object.values(PROVIDERS).forEach((p) => {
       const a = document.createElement("a");
-      a.href = "?p=" + p.id;
+      a.href = p.id === DEFAULT_PROVIDER ? "./" : "?p=" + p.id;
       a.textContent = p.name;
       if (p.id === provider.id) a.setAttribute("aria-current", "page");
       nav.appendChild(a);
@@ -64,7 +63,6 @@
 
   // ---------- Generator ----------
   function startGenerator() {
-    $("generator").hidden = false;
     const input = $("genInput");
     input.focus();
 
@@ -107,6 +105,11 @@
 
   // ---------- Player ----------
   function startPlayer(q) {
+    // Shared links are personal one-offs; keep them out of search results.
+    const robots = document.querySelector('meta[name="robots"]');
+    if (robots) robots.content = "noindex, follow";
+    document.title = "Let me " + provider.name + " that for you…";
+    $("generator").hidden = true;
     $("player").hidden = false;
     const target = provider.buildUrl(q);
     const cursor = $("cursor");

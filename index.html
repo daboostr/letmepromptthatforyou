@@ -3,10 +3,81 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Let me prompt that for you</title>
-  <meta name="description" content="For all those people who find it more convenient to ask you than to ask their AI assistant." />
+  <title>Let Me Copilot That For You – Let Me Prompt That For You (LMPTFY)</title>
+  <meta name="description" content="Let Me Prompt That For You: the AI-era Let Me Google That For You. Turn any question into a funny shareable link that shows coworkers how to ask Microsoft Copilot themselves." />
+  <meta name="keywords" content="let me prompt that for you, let me copilot that for you, lmptfy, let me google that for you for AI, let me bing that for you copilot, lmgtfy ai, microsoft copilot prank link, ask copilot yourself, passive aggressive copilot link" />
+  <meta name="author" content="Thymio Barbatsis" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#7f5af0" />
+  <link rel="canonical" href="https://daboostr.com/letmepromptthatforyou/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Let Me Prompt That For You" />
+  <meta property="og:title" content="Let Me Copilot That For You" />
+  <meta property="og:description" content="For all those people who find it more convenient to ask you than to ask Copilot. Make a link that types their question into Copilot for them." />
+  <meta property="og:url" content="https://daboostr.com/letmepromptthatforyou/" />
+  <meta property="og:image" content="https://daboostr.com/letmepromptthatforyou/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Let Me Copilot That For You – Was that so hard?" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Let Me Copilot That For You" />
+  <meta name="twitter:description" content="For all those people who find it more convenient to ask you than to ask Copilot." />
+  <meta name="twitter:image" content="https://daboostr.com/letmepromptthatforyou/og-image.png" />
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🙄</text></svg>" />
+  <link rel="apple-touch-icon" href="og-image.png" />
+  <link rel="sitemap" type="application/xml" href="sitemap.xml" />
   <link rel="stylesheet" href="styles.css" />
+  <script>if (/[?&]q=/.test(location.search)) document.documentElement.classList.add("play");</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://daboostr.com/letmepromptthatforyou/#app",
+        "name": "Let Me Prompt That For You",
+        "alternateName": ["Let Me Copilot That For You", "LMPTFY"],
+        "url": "https://daboostr.com/letmepromptthatforyou/",
+        "description": "A humorous link generator, inspired by Let Me Google That For You and Let Me Bing That For You, that shows people how to type their own question into Microsoft Copilot.",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "image": "https://daboostr.com/letmepromptthatforyou/og-image.png",
+        "author": { "@type": "Person", "name": "Thymio Barbatsis", "url": "https://daboostr.com/" },
+        "potentialAction": {
+          "@type": "UseAction",
+          "target": "https://daboostr.com/letmepromptthatforyou/?p=copilot&q={question}"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Let Me Prompt That For You?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It is the AI version of Let Me Google That For You. Paste a question someone asked you, share the link, and they watch an animation that types their question into Microsoft Copilot before sending them there." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Let Me Copilot That For You free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. It is free, needs no sign-up, and runs entirely in your browser. Questions are only stored in the link you share." }
+          },
+          {
+            "@type": "Question",
+            "name": "Will it support Gemini or ChatGPT?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Copilot is the first supported assistant. A Gemini version is coming soon." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -16,10 +87,10 @@
 
   <main>
     <!-- Generator view -->
-    <section id="generator" class="view" hidden>
+    <section id="generator" class="view">
       <div class="logo" aria-hidden="true"><div class="orb"></div></div>
       <h1>Let me <span class="grad" id="genProvider">Copilot</span> that for you</h1>
-      <p class="tagline" id="tagline"></p>
+      <p class="tagline" id="tagline">For all those people who find it more convenient to ask you than to ask Copilot.</p>
 
       <div id="genForm" class="promptbox">
         <label for="genInput" class="sr-only">The question your coworker asked you</label>
@@ -38,6 +109,31 @@
         </div>
         <p id="copyStatus" class="muted" role="status" aria-live="polite"></p>
       </div>
+
+      <section class="info" aria-labelledby="howTitle">
+        <h2 id="howTitle">How Let Me Prompt That For You works</h2>
+        <ol>
+          <li><strong>Paste the question</strong> a coworker asked you, the one they could have asked Copilot.</li>
+          <li><strong>Share the link</strong> in Teams, Slack or email.</li>
+          <li><strong>They watch</strong> an animation that types their question into Copilot and presses send, then they land in Microsoft Copilot with the answer.</li>
+        </ol>
+      </section>
+
+      <section class="info" aria-labelledby="faqTitle">
+        <h2 id="faqTitle">Frequently asked questions</h2>
+        <details>
+          <summary>What is Let Me Prompt That For You?</summary>
+          <p>It is the AI version of Let Me Google That For You. Paste a question someone asked you, share the link, and they watch an animation that types their question into Microsoft Copilot before sending them there.</p>
+        </details>
+        <details>
+          <summary>Is Let Me Copilot That For You free?</summary>
+          <p>Yes. It is free, needs no sign-up, and runs entirely in your browser. Questions are only stored in the link you share.</p>
+        </details>
+        <details>
+          <summary>Will it support Gemini or ChatGPT?</summary>
+          <p>Copilot is the first supported assistant. A Gemini version is coming soon.</p>
+        </details>
+      </section>
     </section>
 
     <!-- Playback view -->

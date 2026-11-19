@@ -1,0 +1,17 @@
+# Let Me Prompt That For You (LMPTFY)
+
+> Let Me Prompt That For You, also called "Let Me Copilot That For You", is a free, humorous web app at https://daboostr.com/letmepromptthatforyou/. It is the AI-era version of "Let Me Google That For You" and "Let Me Bing That For You": you paste a question someone asked you, share the generated link, and the recipient watches an animation that types their question into Microsoft Copilot, presses send, asks "Was that so hard?", and then opens Copilot with the question prefilled.
+
+## Key facts
+
+- URL: https://daboostr.com/letmepromptthatforyou/
+- Price: free, no sign-up, runs entirely in the browser; nothing is stored on a server.
+- Supported assistant: Microsoft Copilot. Gemini support is planned.
+- Link format: https://daboostr.com/letmepromptthatforyou/?p=copilot&q=<url-encoded question>
+- Use case: lighthearted pushback when coworkers ask you to "just put this into Copilot" for them.
+- Not affiliated with Microsoft.
+- Creator: Thymio Barbatsis (https://daboostr.com/)
+
+## Source
+
+- [GitHub repository](https://github.com/daboostr/letmepromptthatforyou)
