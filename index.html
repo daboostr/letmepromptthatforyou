@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Let me prompt that for you</title>
+  <meta name="description" content="For all those people who find it more convenient to ask you than to ask their AI assistant." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🙄</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" id="brandLink">Let me <span class="grad" id="providerName">prompt</span> that for you</a>
+    <nav class="providers" id="providerNav" aria-label="AI provider"></nav>
+  </header>
+
+  <main>
+    <!-- Generator view -->
+    <section id="generator" class="view" hidden>
+      <div class="logo" aria-hidden="true"><div class="orb"></div></div>
+      <h1>Let me <span class="grad" id="genProvider">Copilot</span> that for you</h1>
+      <p class="tagline" id="tagline"></p>
+
+      <div id="genForm" class="promptbox">
+        <label for="genInput" class="sr-only">The question your coworker asked you</label>
+        <textarea id="genInput" rows="2" placeholder="Paste the question your coworker asked you…"></textarea>
+        <button type="button" id="genBtn" class="send" aria-label="Generate link">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M3.4 20.4 21 12 3.4 3.6l-.01 6.53L15 12 3.39 13.87z"/></svg>
+        </button>
+      </div>
+
+      <div id="result" class="result" hidden>
+        <p>Here's your link. Send it with love. 💌</p>
+        <div class="linkrow">
+          <input id="linkOut" type="text" readonly aria-label="Generated link" />
+          <button id="copyBtn" type="button" class="btn">Copy</button>
+          <a id="previewBtn" class="btn ghost">Preview</a>
+        </div>
+        <p id="copyStatus" class="muted" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Playback view -->
+    <section id="player" class="view" hidden>
+      <div class="caption" id="caption" role="status" aria-live="polite"></div>
+
+      <div class="fake-app" id="fakeApp">
+        <div class="fake-header">
+          <div class="orb small" aria-hidden="true"></div>
+          <span id="fakeTitle">Copilot</span>
+        </div>
+        <div class="fake-body">
+          <p class="fake-greeting">Hi, how can I help you today?</p>
+        </div>
+        <div class="promptbox fake-box" id="fakeBox">
+          <div id="fakeInput" class="fake-input" aria-hidden="true"><span class="ph" id="fakePh"></span><span id="typed"></span><span class="caret" id="caret"></span></div>
+          <button type="button" class="send" id="fakeSend" tabindex="-1" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M3.4 20.4 21 12 3.4 3.6l-.01 6.53L15 12 3.39 13.87z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="after" id="after" hidden>
+        <p id="redirectNote" class="muted"></p>
+        <div class="linkrow center">
+          <a id="goNow" class="btn">Take me there now</a>
+          <button id="stayBtn" type="button" class="btn ghost">Let me bask in the shame</button>
+        </div>
+      </div>
+
+      <p class="skip"><button type="button" id="skipBtn" class="linklike">Skip the lesson</button></p>
+    </section>
+
+    <div id="cursor" class="cursor" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="28" height="28"><path d="M4 2l16 10-7 1.5L9.5 21z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>Not affiliated with Microsoft or anyone who could get us in trouble. Made for passive-aggressive purposes only.</span>
+    <a href="./" id="makeOwn">Make your own</a>
+  </footer>
+
+  <script src="providers.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
